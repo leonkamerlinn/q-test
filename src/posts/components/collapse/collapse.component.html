@@ -1,0 +1,7 @@
+<div class="collapsible" (click)="toggle()">
+    <ng-content select=".title"></ng-content>
+
+    <div class="content" [class.collapsed]="collapsed">
+        <ng-content select=".content"></ng-content>
+    </div>
+</div>

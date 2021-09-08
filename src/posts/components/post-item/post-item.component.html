@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="container">
+        <span>Author: <b>{{post?.user?.name}}</b></span>
+        <a routerLink="/posts/{{post?.id?.toString()}}"><h2 [innerHTML]="post?.title"></h2></a>
+        <h4 [innerHTML]="post?.body"></h4>
+
+
+        <collapse>
+            <span class="title"><b>Comments</b></span>
+            <ul class="content">
+                <li *ngFor="let comment of post?.comments">{{comment.body}}</li>
+            </ul>
+        </collapse>
+
+    </div>
+</div>

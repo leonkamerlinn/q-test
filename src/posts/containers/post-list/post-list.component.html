@@ -1,0 +1,12 @@
+<search-form (query)="onSearchQuery($event)"></search-form>
+
+<h1 class="error" *ngIf="(error$ | async); else posts">
+    An unexpected error has occurred.
+</h1>
+
+<ng-template #posts>
+    <post-item
+        *ngFor="let post of (posts$ | async)"
+        [post]="post"></post-item>
+</ng-template>
+
